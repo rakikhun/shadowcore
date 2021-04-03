@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 ShadowCore
+ * Copyright 2021 Miracle Core
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -746,6 +746,7 @@ class TC_GAME_API SpellMgr
         void LoadSpellInfoStore();
         void UnloadSpellInfoStore();
         void UnloadSpellInfoImplicitTargetConditionLists();
+        void LoadSpellInfoServerside();
         void LoadSpellInfoCustomAttributes();
         void LoadSpellInfoCorrections();
         void LoadSpellInfoSpellSpecificAndAuraState();
