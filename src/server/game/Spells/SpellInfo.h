@@ -426,7 +426,6 @@ typedef std::unordered_map<uint32, SpellEffectEntryVector> SpellEffectEntryMap;
 
 typedef std::vector<SpellXSpellVisualEntry const*> SpellVisualVector;
 typedef std::unordered_map<uint32, SpellVisualVector> SpellVisualMap;
-
 typedef std::vector<AuraEffect*> AuraEffectVector;
 
 struct SpellInfoLoadHelper;
