@@ -1,5 +1,5 @@
 #############################################
-# ShadowCore Auth Server configuration file #
+# Miracle Core Auth Server configuration file #
 #############################################
 [bnetserver]
 
@@ -181,7 +181,7 @@ BanExpiryCheckInterval = 60
 #    SourceDirectory
 #        Description: The path to your ShadowCore source directory.
 #                     If the path is left empty, the built-in CMAKE_SOURCE_DIR is used.
-#        Example:     "../ShadowCore"
+#        Example:     "../MiracleCore"
 #        Default:     ""
 
 SourceDirectory  = ""
