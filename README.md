@@ -15,6 +15,12 @@ It is mostly based on TrinityCore, written in c++ and sql.
 Requirements:
 
 1.Visual Studio 2019
+
+
 2.OpenSSL 1.1.1h
+
+
 3.Boost 1.66
+
+
 4.MySql 5.7.32
