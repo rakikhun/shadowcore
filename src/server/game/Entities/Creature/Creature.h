@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 ShadowCore
+ * Copyright 2021 Miracle Core
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -223,9 +223,6 @@ class TC_GAME_API Creature : public Unit, public GridObject<Creature>, public Ma
         void AddLootMode(uint16 lootMode) { m_LootMode |= lootMode; }
         void RemoveLootMode(uint16 lootMode) { m_LootMode &= ~lootMode; }
         void ResetLootMode() { m_LootMode = LOOT_MODE_DEFAULT; }
-
-        SpellInfo const* reachWithSpellAttack(Unit* victim);
-        SpellInfo const* reachWithSpellCure(Unit* victim);
 
         uint32 m_spells[MAX_CREATURE_SPELLS];
 
@@ -487,3 +484,4 @@ class TC_GAME_API ForcedDespawnDelayEvent : public BasicEvent
 };
 
 #endif
+© 2021 GitHub, Inc.
