@@ -2598,7 +2598,7 @@ struct MapDifficultyEntry
     }
 };
 
-sstruct MapDifficultyXConditionEntry
+struct MapDifficultyXConditionEntry
 {
     uint32 ID;
     LocalizedString FailureDescription;
