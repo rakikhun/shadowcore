@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 ShadowCore
+ * Copyright 2021 Miracle Core
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -222,6 +222,7 @@ DB2Storage<MailTemplateEntry>                   sMailTemplateStore("MailTemplate
 DB2Storage<MapEntry>                            sMapStore("Map.db2", MapLoadInfo::Instance());
 DB2Storage<MapChallengeModeEntry>               sMapChallengeModeStore("MapChallengeMode.db2", MapChallengeModeLoadInfo::Instance());
 DB2Storage<MapDifficultyEntry>                  sMapDifficultyStore("MapDifficulty.db2", MapDifficultyLoadInfo::Instance());
+DB2Storage<MapDifficultyXConditionEntry>        sMapDifficultyXConditionStore("MapDifficultyXCondition.db2", MapDifficultyXConditionLoadInfo::Instance());
 DB2Storage<MapDifficultyXConditionEntry>        sMapDifficultyXConditionStore("MapDifficultyXCondition.db2", MapDifficultyXConditionLoadInfo::Instance());
 DB2Storage<ModifierTreeEntry>                   sModifierTreeStore("ModifierTree.db2", ModifierTreeLoadInfo::Instance());
 DB2Storage<MountCapabilityEntry>                sMountCapabilityStore("MountCapability.db2", MountCapabilityLoadInfo::Instance());
@@ -1254,7 +1255,7 @@ uint32 DB2Manager::LoadStores(std::string const& dataPath, LocaleConstant defaul
         _mapDifficulties[entry->MapID][entry->DifficultyID] = entry;
     _mapDifficulties[0][0] = _mapDifficulties[1][0]; // map 0 is missing from MapDifficulty.dbc so we cheat a bit
 
-    std::vector<MapDifficultyXConditionEntry const*> mapDifficultyConditions;
+        std::vector<MapDifficultyXConditionEntry const*> mapDifficultyConditions;
     mapDifficultyConditions.reserve(sMapDifficultyXConditionStore.GetNumRows());
     for (MapDifficultyXConditionEntry const* mapDifficultyCondition : sMapDifficultyXConditionStore)
         mapDifficultyConditions.push_back(mapDifficultyCondition);
@@ -3215,7 +3216,7 @@ double DB2Manager::GetChallengeWeight(uint32 mapID)
             case 1763: // Atal'Dazar
             case 1771: // tol dagor
             case 1841: // Underrot
-            case 1762: // king´s rest 
+            case 1762: // kingÂ´s rest 
             case 1754: // freehold
             case 2097: // op mechagon
             case 1864: // shrine of the storm 
