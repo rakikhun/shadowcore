@@ -41,7 +41,7 @@ enum MovementGeneratorType : uint8;
 
 struct ScriptParam;
 
-struct VendorItemCount
+struct VendorItemCount;
 {
     VendorItemCount(uint32 _item, uint32 _count)
         : itemId(_item), count(_count), lastIncrementTime(time(nullptr)) { }
