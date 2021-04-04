@@ -20,7 +20,7 @@
 
 #include "Creature.h"
 
-enum PetEntry;
+enum PetEntry
 {
     // Warlock pets
     PET_IMP             = 416,

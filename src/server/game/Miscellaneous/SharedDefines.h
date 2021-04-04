@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Miracle Core
+ * Copyright 2021 ShadowCore
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -1310,7 +1310,7 @@ enum SpellEffectName
     SPELL_EFFECT_LEARN_GARRISON_BUILDING            = 210,
     SPELL_EFFECT_LEARN_GARRISON_SPECIALIZATION      = 211,
     SPELL_EFFECT_212                                = 212,
-    SPELL_EFFECT_JUMP_DEST_2                        = 213,
+    SPELL_EFFECT_213                                = 213,
     SPELL_EFFECT_CREATE_GARRISON                    = 214,
     SPELL_EFFECT_UPGRADE_CHARACTER_SPELLS           = 215, // Unlocks boosted players' spells (ChrUpgrade*.db2)
     SPELL_EFFECT_CREATE_SHIPMENT                    = 216,

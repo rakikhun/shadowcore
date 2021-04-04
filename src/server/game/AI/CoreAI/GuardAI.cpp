@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Miracle Core
+ * Copyright 2021 ShadowCore
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -71,7 +71,9 @@ void GuardAI::EnterEvadeMode(EvadeReason /*why*/)
     me->DeleteThreatList();
     me->CombatStop(true);
 
-    me->GetMotionMaster()->MoveTargetedHome();
+    // Remove ChaseMovementGenerator from MotionMaster stack list, and add HomeMovementGenerator instead
+    if (me->GetMotionMaster()->GetCurrentMovementGeneratorType() == CHASE_MOTION_TYPE)
+        me->GetMotionMaster()->MoveTargetedHome();
 }
 
 void GuardAI::JustDied(Unit* killer)
@@ -79,4 +81,3 @@ void GuardAI::JustDied(Unit* killer)
     if (Player* player = killer->GetCharmerOrOwnerPlayerOrPlayerItself())
         me->SendZoneUnderAttackMessage(player);
 }
-© 2021 GitHub, Inc.

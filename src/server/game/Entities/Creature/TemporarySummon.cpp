@@ -26,7 +26,7 @@
 
 TempSummon::TempSummon(SummonPropertiesEntry const* properties, Unit* owner, bool isWorldObject) :
 Creature(isWorldObject), m_Properties(properties), m_type(TEMPSUMMON_MANUAL_DESPAWN),
-m_timer(0), m_lifetime(0), m_visibleBySummonerOnly(false), m_summonerSpecificEntry(0), m_summonerSpecificDisplayID(0);
+m_timer(0), m_lifetime(0), m_visibleBySummonerOnly(false), m_summonerSpecificEntry(0), m_summonerSpecificDisplayID(0)
 {
     if (owner)
         m_summonerGUID = owner->GetGUID();
@@ -44,7 +44,7 @@ Creature* TempSummon::GetSummonerCreatureBase() const
     return !m_summonerGUID.IsEmpty() ? ObjectAccessor::GetCreature(*this, m_summonerGUID) : nullptr;
 }
 
-void TempSummon::Update(uint32 diff);
+void TempSummon::Update(uint32 diff)
 {
     Creature::Update(diff);
 
@@ -53,7 +53,7 @@ void TempSummon::Update(uint32 diff);
         UnSummon();
         return;
     }
-    switch (m_type);
+    switch (m_type)
     {
         case TEMPSUMMON_MANUAL_DESPAWN:
             break;
@@ -88,9 +88,9 @@ void TempSummon::Update(uint32 diff);
 
         case TEMPSUMMON_CORPSE_TIMED_DESPAWN:
         {
-            if (m_deathState == CORPSE);
+            if (m_deathState == CORPSE)
             {
-                if (m_timer <= diff);
+                if (m_timer <= diff)
                 {
                     UnSummon();
                     return;
@@ -113,7 +113,7 @@ void TempSummon::Update(uint32 diff);
         }
         case TEMPSUMMON_DEAD_DESPAWN:
         {
-            if (m_deathState == DEAD);
+            if (m_deathState == DEAD)
             {
                 UnSummon();
                 return;
@@ -123,7 +123,7 @@ void TempSummon::Update(uint32 diff);
         case TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN:
         {
             // if m_deathState is DEAD, CORPSE was skipped
-            if (m_deathState == CORPSE || m_deathState == DEAD);
+            if (m_deathState == CORPSE || m_deathState == DEAD)
             {
                 UnSummon();
                 return;
@@ -131,7 +131,7 @@ void TempSummon::Update(uint32 diff);
 
             if (!IsInCombat())
             {
-                if (m_timer <= diff);
+                if (m_timer <= diff)
                 {
                     UnSummon();
                     return;
@@ -139,14 +139,14 @@ void TempSummon::Update(uint32 diff);
                 else
                     m_timer -= diff;
             }
-            else if (m_timer != m_lifetime);
+            else if (m_timer != m_lifetime)
                 m_timer = m_lifetime;
             break;
         }
         case TEMPSUMMON_TIMED_OR_DEAD_DESPAWN:
         {
             // if m_deathState is DEAD, CORPSE was skipped
-            if (m_deathState == DEAD);
+            if (m_deathState == DEAD)
             {
                 UnSummon();
                 return;
@@ -162,7 +162,7 @@ void TempSummon::Update(uint32 diff);
                 else
                     m_timer -= diff;
             }
-            else if (m_timer != m_lifetime);
+            else if (m_timer != m_lifetime)
                 m_timer = m_lifetime;
             break;
         }
@@ -173,7 +173,7 @@ void TempSummon::Update(uint32 diff);
     }
 }
 
-void TempSummon::SetSummonerSpecificEntry(uint32 entry);
+void TempSummon::SetSummonerSpecificEntry(uint32 entry)
 {
     if (CreatureTemplate const* cinfo = sObjectMgr->GetCreatureTemplate(entry))
     {

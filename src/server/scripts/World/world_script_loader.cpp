@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 MiracleCore
+ * Copyright 2021 ShadowCore
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -24,7 +24,7 @@ void AddSC_conversation_scripts();
 void AddSC_emerald_dragons();
 void AddSC_generic_creature();
 void AddSC_go_scripts();
-void AddSC_npc_guard();
+void AddSC_guards();
 void AddSC_item_scripts();
 void AddSC_npc_professions();
 void AddSC_npc_innkeeper();
@@ -47,7 +47,7 @@ void AddWorldScripts()
     AddSC_emerald_dragons();
     AddSC_generic_creature();
     AddSC_go_scripts();
-    AddSC_npc_guard();
+    AddSC_guards();
     AddSC_item_scripts();
     AddSC_npc_professions();
     AddSC_npc_innkeeper();

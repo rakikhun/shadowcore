@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Miracle Core
+ * Copyright 2021 ShadowCore
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -4191,22 +4191,7 @@ struct MapDifficultyXConditionLoadInfo
         return &loadInfo;
     }
 };
-struct MapDifficultyXConditionLoadInfo
-{
-    static DB2LoadInfo const* Instance()
-    {
-        static DB2FieldMeta const fields[] =
-        {
-            { false, FT_INT, "ID" },
-            { false, FT_STRING, "FailureDescription" },
-            { false, FT_INT, "PlayerConditionID" },
-            { true, FT_INT, "OrderIndex" },
-            { false, FT_INT, "MapDifficultyID" },
-        };
-        static DB2LoadInfo const loadInfo(&fields[0], std::extent<decltype(fields)>::value, MapDifficultyXConditionMeta::Instance(), HOTFIX_SEL_MAP_DIFFICULTY_X_CONDITION);
-        return &loadInfo;
-    }
-};
+
 struct ModifierTreeLoadInfo
 {
     static DB2LoadInfo const* Instance()
