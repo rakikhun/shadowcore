@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 ShadowCore
+ * Copyright 2021 Miracle Core
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -2598,7 +2598,7 @@ struct MapDifficultyEntry
     }
 };
 
-struct MapDifficultyXConditionEntry
+sstruct MapDifficultyXConditionEntry
 {
     uint32 ID;
     LocalizedString FailureDescription;
